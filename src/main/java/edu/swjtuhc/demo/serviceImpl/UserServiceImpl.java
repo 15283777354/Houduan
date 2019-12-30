@@ -13,8 +13,30 @@ import edu.swjtuhc.demo.service.UserService;
 public class UserServiceImpl implements UserService{
 	@Autowired
 	UserMapper userMapper;
+
 	@Override
-	public List<SysUser> getAllUsers() {
-		return userMapper.selectAllUsers();
+	public int register(SysUser user) {
+		// TODO Auto-generated method stub
+		//调用mapper实现注册
+		SysUser u0 = userMapper.selectUserByStuid(user.getStuid());
+		int i = -1;
+		if (u0==null) {
+			i=userMapper.insertUser(user);
+		}else {
+			i = 2;
+		}
+		return i;
 	}
+	
+	@Override
+	public SysUser userLogin(String username) {
+		// TODO Auto-generated method stub
+		return userMapper.userLogin(username);
+	}
+	@Override
+	public List<SysUser> getAllSysUsers() {
+		// TODO Auto-generated method stub
+		return userMapper.selectAllSysUsers();
+	}
+	
 }

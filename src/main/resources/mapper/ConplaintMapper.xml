@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	" http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="edu.swjtuhc.demo.mapper.ConplaintMapper">
+	
+	<resultMap type="edu.swjtuhc.demo.model.conplaint" id="conplaint_result">
+	<result column="name" property="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="dormitory" property="dormitory" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="phone" property="phone" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="note" property="note" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="item" property="item" javaType="java.lang.String" jdbcType="VARCHAR"/>
+</resultMap>
+
+<select id="selectAllConplaints" resultMap="conplaint_result"> 
+	select * from conplaint
+	</select>
+	<insert id = "insertConplaint" parameterType="edu.swjtuhc.demo.model.conplaint">
+	
+	insert into conplaint
+	(name,dormitory,phone,note,item)
+	values
+	(#{name},#{dormitory},#{phone},#{note},#{item})
+	
+	</insert>
+	<select id = "selectConplaintByName" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.conplaint">
+	
+	select * from conplaint
+	where name = #{name}
+	
+	</select>
+	
+	</mapper>

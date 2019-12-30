@@ -1,24 +1,17 @@
 package edu.swjtuhc.demo.model;
 
 public class SysUser {
-
-	private int UId;
-	private String username;
+	private int stuid;
 	private String password;
+	private String confirm;
 	private String name;
-	private int age;
-	private String gender;
-	public int getUId() {
-		return UId;
+	private String phone;
+	private String dormitory;
+	public int getStuid() {
+		return stuid;
 	}
-	public void setUId(int uId) {
-		UId = uId;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setStuid(int stuid) {
+		this.stuid = stuid;
 	}
 	public String getPassword() {
 		return password;
@@ -26,27 +19,38 @@ public class SysUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getConfirm() {
+		return confirm;
+	}
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
+	public String getPhone() {
+		return phone;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getGender() {
-		return gender;
+	public String getDormitory() {
+		return dormitory;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setDormitory(String dormitory) {
+		this.dormitory = dormitory;
 	}
+	
 	@Override
 	public String toString() {
-		return "SysUser [UId=" + UId + ", username=" + username + ", password=" + password + ", name=" + name + ", age="
-				+ age + ", gender=" + gender + "]";
+		return "SysUser [stuid=" + stuid + ", password=" + password + ", confirm=" + confirm + ", name=" + name
+				+ ", phone=" + phone + ", dormitory=" + dormitory + ", getStuid()=" + getStuid() + ", getPassword()="
+				+ getPassword() + ", getConfirm()=" + getConfirm() + ", getName()=" + getName() + ", getPhone()="
+				+ getPhone() + ", getDormitory()=" + getDormitory() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}
+
 }

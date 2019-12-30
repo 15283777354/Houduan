@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	" http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.FankuiMapper">
+<resultMap type="edu.swjtuhc.demo.model.Fankui" id="fankui_result">
+	<result column="orders" property="orders" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+	<result column="dormitory" property="dormitory" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="item" property="item" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="score" property="score" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="advice" property="advice" javaType="java.lang.String" jdbcType="VARCHAR"/>
+</resultMap>
+<select id="selectAllFankuis" resultMap="fankui_result"> 
+	select * from fankui
+	</select>
+	<insert id="insertWeixiufankui" parameterType="edu.swjtuhc.demo.model.Fankui">
+	insert into fankui
+		(orders,dormitory,item,score,advice)
+		values
+		(#{orders},#{dormitory},#{item},#{score},#{advice})
+	</insert>
+	<select id="selectFankuiByOrders" parameterType="java.lang.Integer" resultType="edu.swjtuhc.demo.model.Fankui">
+	select * from fankui
+	where 
+	orders = #{orders}
+	</select>
+</mapper>

@@ -2,14 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	" http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.swjtuhc.demo.mapper.UserMapper">
-<resultMap type="edu.swjtuhc.demo.model.SysUser" id="user_result">
-<id column="u_id" property="UId" javaType="java.lang.Integer" jdbcType="INTEGER"/>
-<result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<resultMap type="edu.swjtuhc.demo.model.SysUser" id="users_result">
+<id column="stuid" property="stuid" javaType="java.lang.Integer" jdbcType="INTEGER"/>
 <result column="password" property="password" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="confirm" property="confirm" javaType="java.lang.String" jdbcType="VARCHAR"/>
 <result column="name" property="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
-<result column="age" property="age" javaType="java.lang.Integer" jdbcType="INTEGER"/>
-<result column="sex" property="gender" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="phone" property="phone" javaType="java.lang.String" jdbcType="VARCHAR"/>
+<result column="dormitory" property="dormitory" javaType="java.lang.String" jdbcType="VARCHAR"/>
 </resultMap>
-	<select id="selectAllUsers" resultMap="user_result">
+<select id="selectAllSysUsers" resultMap="users_result"> 
+	select stuid,name,phone,dormitory from sysuser
+	</select>
+<insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">
+		insert into sysuser
+		(stuid,password,confirm,name,phone,dormitory)
+		values
+		(#{stuid},#{password},#{confirm},#{name},#{phone},#{dormitory})
+</insert>
+
+<select id="userLogin" parameterType="java.lang.String"  resultType="edu.swjtuhc.demo.model.SysUser">
+	     select * from sysuser
+	     where 
+	    stuid = #{stuid} 
+	</select>
+	<select id="selectUserByStuid" parameterType="java.lang.Integer" resultType="edu.swjtuhc.demo.model.SysUser">
+	select * from sysuser
+	where
+	stuid = #{stuid}
 	</select>
 </mapper>
