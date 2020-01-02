@@ -12,7 +12,6 @@ import edu.swjtuhc.demo.model.conplaint;
 import edu.swjtuhc.demo.service.ConplaintService;
 import net.sf.json.JSONObject;
 
-
 @RestController
 @RequestMapping("/user")
 public class ConplaintController {
@@ -29,6 +28,10 @@ public class ConplaintController {
 	@RequestMapping("/getConplaint")
 	public List<conplaint> getConplaints(){
 		return ConplaintService.getAllConplaints();
+	}
+	@RequestMapping("/weixiuzhuangtai")
+	public List<conplaint> weixiuzhuangtai(){
+		return ConplaintService.weixiuzhuangtai();
 	}
 
 }

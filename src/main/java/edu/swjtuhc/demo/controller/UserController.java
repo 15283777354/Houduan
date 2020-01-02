@@ -49,6 +49,9 @@ public class UserController {
 	public List<SysUser> getUsers(){
 		return  userService.getAllSysUsers();
 	}
-
+	@RequestMapping("/sushexinxi")
+	public List<SysUser> sushexinxi(){
+		return  userService.getsushexinxi();
+	}
 	
 }

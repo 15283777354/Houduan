@@ -30,5 +30,10 @@ public class ConplaintServiceImpl implements ConplaintService{
 		// TODO Auto-generated method stub
 		return ConplaintMapper.selectAllConplaints();
 	}
+	@Override
+	public List<edu.swjtuhc.demo.model.conplaint> weixiuzhuangtai() {
+		// TODO Auto-generated method stub
+		return ConplaintMapper.weixiuzhuangtai();
+	}
 
 }

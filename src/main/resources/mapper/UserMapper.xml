@@ -13,6 +13,11 @@
 <select id="selectAllSysUsers" resultMap="users_result"> 
 	select stuid,name,phone,dormitory from sysuser
 	</select>
+	<select id="selectsushexinxi" parameterType="java.lang.Integer" resultType="edu.swjtuhc.demo.model.SysUser"> 
+	select * from sysuser
+	where
+	stuid = #{stuid} 
+	</select>
 <insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">
 		insert into sysuser
 		(stuid,password,confirm,name,phone,dormitory)

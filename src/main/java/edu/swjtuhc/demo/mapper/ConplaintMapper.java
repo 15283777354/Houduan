@@ -11,4 +11,5 @@ public interface ConplaintMapper {
 public conplaint selectConplaintByName(String name);
 public int insertConplaint(conplaint conplainter);
 public List<conplaint> selectAllConplaints();
+public List<conplaint> weixiuzhuangtai();
 }

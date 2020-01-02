@@ -13,4 +13,5 @@ public interface UserMapper {
 	public SysUser selectUserByStuid(int stuid);
 	public List<SysUser> selectAllSysUsers();
 	public int insertUser(SysUser user);
+	public List<SysUser> selectsushexinxi();
 }

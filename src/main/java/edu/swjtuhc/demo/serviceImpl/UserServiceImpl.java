@@ -38,5 +38,11 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userMapper.selectAllSysUsers();
 	}
+
+	@Override
+	public List<SysUser> getsushexinxi() {
+		// TODO Auto-generated method stub
+		return userMapper.selectsushexinxi();
+	}
 	
 }

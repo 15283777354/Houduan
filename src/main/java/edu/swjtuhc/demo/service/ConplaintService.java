@@ -8,4 +8,6 @@ public interface ConplaintService {
 	
 public int conplaint(conplaint conplainter);
 public List<edu.swjtuhc.demo.model.conplaint> getAllConplaints();
+public List<edu.swjtuhc.demo.model.conplaint> weixiuzhuangtai();
+
 }

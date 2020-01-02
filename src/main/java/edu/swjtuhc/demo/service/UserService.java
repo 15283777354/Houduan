@@ -9,5 +9,6 @@ import edu.swjtuhc.demo.model.SysUser;
 		 public int register(SysUser user);
 		 public SysUser userLogin(String name);
 		 public List<SysUser> getAllSysUsers();
+		public List<SysUser> getsushexinxi();
 	}
 
